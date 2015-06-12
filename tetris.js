@@ -1,8 +1,6 @@
 // global game object
 //Notes - Yet to be implemented:
 //rotation states for each shape & handling input for rotation
-//debug off-board detection - will glitch
-//if long shapes are moved off the board
 
 var Tetris = (function(global) {
     //create Cells class 
