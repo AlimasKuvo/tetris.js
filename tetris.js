@@ -192,7 +192,7 @@ var Tetris = (function(global) {
         gridCell
         offboard = false;
         //if left
-        if(direction === 'left' && shapeCells[0].x > 1){
+        if(direction === 'left' && shapeCells[2].x > 0){
         //toggleCells off
             this.toggleCells('off');
             shapeCells.forEach(function(cell){
@@ -204,7 +204,7 @@ var Tetris = (function(global) {
             //shift direction right
 
 
-        }if(direction === 'right' && shapeCells[0].x < tetris.colSize - 1){
+        }if(direction === 'right' && shapeCells[1].x < tetris.colSize - 1){
         //toggleCells off
             this.toggleCells('off');
             shapeCells.forEach(function(cell){
@@ -285,9 +285,9 @@ var Tetris = (function(global) {
         var center = this.center;
         this.type = 'o';
         this.coords = [center, 
-            {x: center.x - 1, y: center.y},
+            {x: center.x, y: center.y + 1},
             {x: center.x - 1, y: center.y + 1},
-            {x: center.x, y: center.y + 1}];
+            {x: center.x - 1, y: center.y}];
         this.toggleCells('on');
         tetris.update();
     };
@@ -305,8 +305,8 @@ var Tetris = (function(global) {
         this.type = 'i';
         this.coords = [center, 
             {x: center.x + 1, y: center.y},
-            {x: center.x - 1, y: center.y},
-            {x: center.x - 2, y: center.y}];
+            {x: center.x - 2, y: center.y},
+            {x: center.x - 1, y: center.y}];
 
         // this.fillCells(this.coords, '#414934');
     };    
@@ -345,8 +345,8 @@ var Tetris = (function(global) {
 
         this.coords = [center, 
             {x: center.x + 1, y: center.y},
-            {x: center.x, y: center.y + 1},
-            {x: center.x - 1, y: center.y + 1}];
+            {x: center.x - 1, y: center.y + 1},
+            {x: center.x, y: center.y + 1}];
 
         // this.fillCells(this.coords, '#414934');
     };    
